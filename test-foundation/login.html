@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width" />
+	<title>Home | MySexulator</title>
+
+	<link rel="stylesheet" href="css/foundation.css" />
+	<link rel="stylesheet" href="css/styles.css" />
+	<link rel="stylesheet" href="css/skin.css" />
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+	<script src="js/vendor/custom.modernizr.js"></script>
+	
+</head>
+<body>
+	<!-- BEGIN .main-body-wrapper -->
+	<div class="main-body-wrapper"> 
+		<header class="page-width main-header border-radius-0011">
+			<nav class="top-bar main-menu">
+				<ul class="title-area">
+					<!-- Title Area -->
+					<li class="name">
+						<a href="/" title="MySexulator"><img src="images/logo.png"></a>
+					</li>
+				</ul>
+				<section class="top-bar-section">
+				<!-- Right Nav Section -->
+					<ul class="right">
+						<li> <a href="#"><span>Join</span></a> </li>
+						<li> <a href="#"><span>Links</span></a> </li>
+						<li class="selected"> <a href="#"><span>About Us</span></a> </li>
+						<li> <a href="#"><span>Login</span></a> </li>
+					</ul>
+				</section>
+			</nav>
+		</header>
+			<section class="row found-wrapper page-width"> 
+							
+				<!-- BEGIN .main-title -->
+				<section class="large-12 columns">
+					<section class="row">
+						<section class="large-9 columns">
+						<h2 class="title">Login</h2>
+						</section>
+						<section class="large-3 columns">
+							<a class="lnote right" href="http://www.mysexulator.com/privacy">A note about privacy</a>
+						</section>
+					</section>
+				  <!-- END .main-title --> 
+				</section>
+				<!-- BEGIN .main-content -->
+				<section class="large-12 columns"> 
+				   
+				  <!-- BEGIN .main-sidebar -->
+				  <section class="row found-content">
+      
+					  <!-- BEGIN .main-content-left -->
+					  <section class="large-6 columns">
+						<div class="box-login">
+						  <h3>Welcome Back!</h3>
+						  <h5>Login with Facebook</h5>
+						  <p><a class="bt-sx-join-fb" href="#"><img src="images/facebook.png" width="202" height="26"></a></p>
+						</div>
+					  </section>
+					  <!-- BEGIN .main-sidebar -->
+					  <section class="main-sidebar large-6 columns" style="padding:0px;">
+						<div class="box-login">
+						  <h3>Welcome Back!</h3>
+						  <h5>Login the Old School way!</h5>
+						  
+						  <form action="#" method="post" id="sexulator_login_form" class="custom">
+							<div class="login-form" style="text-align:left;">
+								
+							  <p>
+								<input class="input-text-1 require" type="text" name="evzlogin" id="evzlogin" value="" autocomplete="off" />
+								<label for="evzlogin" class="iplaceholder">Enter Username <span class="ired">*</span></label>
+							  </p>
+							  
+							  <p>
+								<input class="input-text-1 require" type="password" name="evzpassword" id="evzpassword" value="" autocomplete="off"/>
+								<label for="evzpassword" class="iplaceholder">Enter Password <span class="ired">*</span></label>
+								<label style="font-size:0.8em;color:#DD4B39;" id="mess-fail"></label>
+							  </p>
+								<input type="hidden" name = "_amember_redirect_url" value="" /> 
+							  <p class="submit">
+								<button name = 'user_login' class="button-1" type="submit" value="1">Login</button>
+								<span class="f12 right"><a href="#">Forgot Username/Password </a></span> </p>
+							</div>
+						  </form>
+						</div>
+						<!-- END .main-sidebar --> 
+					  </section>
+				  </section>
+				  <!-- END .main-content --> 
+				</section>
+				<!-- END .main-content-wrapper -->			 
+			  </section>
+		<!-- BEGIN .main-footer -->
+		<footer class="main-footer-wrapper clearfix"> 
+			<div class="main-footer row display"> 
+				<div class="row display">
+					<!-- BEGIN .copyright -->
+					<div class="large-1 columns">
+						<span class="copyright">&copy; MLF Inc.</span>
+					</div><!-- END .copyright --> 
+					<!-- BEGIN .navigation -->
+					<div class="small-6 large-8 navigation columns">
+						<ul>
+							<li><a href="#">About Us</a></li>
+							<li><a href="#">Privacy</a></li>
+							<li><a href="#">Terms</a></li>
+						</ul>
+					</div><!-- END .navigation --> 
+					<!-- BEGIN .social -->
+					<div class="small-12 large-2 social columns">
+						<a href="#" class="twitter"></a> <a href="#" class="facebook"></a> 
+					</div>
+					<!-- END .sosial --> 
+				</div>
+			</div><!-- END .main-footer --> 
+		</footer><!-- END .main-footer-wrapper --> 
+	  <<script>
+	  document.write('<script src=' +
+	  ('__proto__' in {} ? 'js/vendor/jquery' : 'js/vendor/jquery') +
+	  '.js><\/script>')
+	  </script>
+	  
+	  <script src="js/foundation.min.js"></script>
+	  
+	  <script>
+	  $(document).ready(function(){
+			$("input.require").focusout(function(e){
+						$(this).closest("p").children("label.iplaceholder").fadeOut();
+						if($(this).val() == ""){
+							$(this).closest("p").children("label.iplaceholder").fadeIn();
+						}
+					 });
+			$("input.require").focus(function(e){
+					$(this).closest("p").children("label.iplaceholder").fadeOut();
+			});
+			$("input.require[value!='']").closest("p").children("label.iplaceholder").fadeOut();
+		});
+		$(document).foundation();
+	  </script>
+	</div><!-- END .main-body-wrapper -->
+</body>
+</html>

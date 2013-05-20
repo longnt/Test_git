@@ -893,3 +893,31 @@ height: 52px;
 width: 200px;
 text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
 }
+/*stats page*/
+.stat-title {
+    background: url("../images/event-panel-title-bg.png") repeat-x scroll 0 0 transparent;
+    border-radius: 8px 8px 0 0;
+    color: #FFFFFF;
+    height: 56px;
+    position: relative;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.6);
+    width: 100%;
+}
+.stat-panel {
+    background: linear-gradient(#0A0809, #2F393B) repeat scroll 0 0 transparent;
+    border: 1px solid #000000;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset;
+    min-height: 429px;
+    position: relative;
+}
+.stat-title h3{
+text-align:center;
+line-height:56px;
+margin-top:0px;
+font-weight:100;
+}
+form.custom .columns span.title-select{
+	line-height:27px;
+	font-weight:800;
+}

@@ -24,8 +24,9 @@ ul{
 	-moz-box-sizing: content-box;
 	-webkit-box-sizing: content-box;
 	box-sizing: content-box;
+	/*
 	background: none repeat scroll 0 0 transparent;
-	border: medium none;
+	border: medium none; */
   }
 .main-body-wrapper { width: 100%; float: left; position: relative; min-height: 100%; background: url(../images/wrapper-bg.png) bottom center no-repeat; }
 .page-width{width: 980px;}
@@ -201,7 +202,7 @@ behavior: url(/~long/hotchalk/Sexulator/pie/PIE.htc);
  }
 	.event-menu ul {}
 		.event-menu ul li { float: left; list-style: none; position: relative; padding:0 0 0 2px; }
-			.event-menu ul li a { font-size: 16px; text-decoration: none; display: block; color: #03AEE0; padding: 10px 22px; -moz-transition: all 0.2s linear 0s; -webkit-transition: all 0.2s linear 0s; -o-transition: all 0.2s linear 0s; }
+			.event-menu ul li a { font-size: 16px; text-decoration: none; display: block; color: #03AEE0; padding: 10px 19px; -moz-transition: all 0.2s linear 0s; -webkit-transition: all 0.2s linear 0s; -o-transition: all 0.2s linear 0s; }
 		.event-menu li:hover > a { color: #fff ; }
 		.event-menu li.selected > a { color: #fff; background-color: rgba(255, 255, 255, 0.2); border-radius: 6px; }
 
@@ -551,9 +552,22 @@ a.back { font-size: 16px; font-weight:bold; text-decoration: none; display: bloc
 	margin:0 0 20px;
 }
 .event-partner form input[type="text"] {
-	width:265px;
+	width:100%px;
 	font-size:14px;
 	padding:8px 5px
+}
+button.add_partner{
+	background: url("../images/ico-add.png") no-repeat scroll 0 0 transparent;
+	border: medium none;
+	box-shadow: none;
+	height: 21px;
+	margin: 5px 0 0 15px;
+	padding: 0;
+	text-indent: -9999px;
+	width: 19px;
+}
+span.ired{
+	color:red;
 }
 .event-partner .submit{
 	text-align:center;
@@ -565,7 +579,7 @@ a.back { font-size: 16px; font-weight:bold; text-decoration: none; display: bloc
 	margin:0 0 10px;
 }
 .event-profile form input[type="text"] {
-	width:265px;
+	width:100%;
 	font-size:14px;
 	padding:8px 5px
 }
@@ -610,6 +624,14 @@ div.row div.large-4 h2, div.row div.large-8 h2{
 	background: -o-linear-gradient(#0A0809, #2f393b);
 	background: linear-gradient(#0A0809, #2f393b);
 }
+div#calendar div.c-days-wrapper table.c-days{border: medium none;}
+div#calendar div.c-days-wrapper table.c-days thead{background: none;}
+.event-sidebar p.submit button {
+    display: block;
+    margin: 0 auto;
+    padding: 0.5em 1.5em;
+    width: 35%;
+}
 .found-wrapper {
     background: url("../images/main-content-wrapper-bg.png") repeat-x scroll center top transparent;
     border-radius: 10px 10px 10px 10px;
@@ -628,8 +650,21 @@ div.row div.large-4 h2, div.row div.large-8 h2{
     padding: 15px 30px;
 	color:white;
 }
+form.custom-has-label .row .radio{width:8px;height:8px}
+form.custom-has-label p label.iplaceholder {
+    cursor: text;
+    font-size: 1em;
+    left: 10px;
+    position: absolute;
+    top: 27px!important;
+}
+.link_upgrade_account {
+    bottom: 0;
+    left: 10%;
+    position: absolute;
+}
 
-
+/* more page */
 .link .found-content h6 {
     color: #979CA0 !important;
     font-weight: 100 !important;

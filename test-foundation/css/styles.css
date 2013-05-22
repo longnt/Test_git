@@ -73,6 +73,20 @@ background: -ms-linear-gradient(#fcfcfc, #6F6F6F);
 background: -o-linear-gradient(#fcfcfc, #6F6F6F);
 background: linear-gradient(#fcfcfc, #6F6F6F);
 }	
+/* menu */
+.top-bar-section ul li > a{
+	font-size:16px;
+	 background: none repeat scroll 0 0 transparent!important;
+}
+.top-bar-section li a{
+	background:none;
+}
+.top-bar-section ul {
+    background: none repeat scroll 0 0 transparent;
+}
+.top-bar-section li:hover > a { color: #03AEE0 ; }
+.top-bar-section li.selected > a { color: #fff; background-color: rgba(255, 255, 255, 0.2)!important; border-radius: 6px; }
+		
 .homepage-columns {
     border-bottom: 1px solid #6C2188;
     margin: 0 0 42px;
@@ -182,6 +196,13 @@ background: -moz-linear-gradient(#0A0809, #2f393b);
 background: -ms-linear-gradient(#0A0809, #2f393b);
 background: -o-linear-gradient(#0A0809, #2f393b);
 background: linear-gradient(#0A0809, #2f393b);
+}
+form#form_change_profile.custom div.row div.custom{
+	width:95%;
+}
+form#form_change_profile .custom.dropdown a.current {
+    padding-left: 6px;
+	text-align: center;
 }
 /* Event menu */
 .event-menu { padding:5px; height:41px;
@@ -440,6 +461,81 @@ background: linear-gradient(#abe2f2, #03AEE0);
 	margin: 0 0 0px;
     padding: 15px 30px 0;
 }
+/* gallery */
+.box-gallery {}
+.box-gallery div.row div.large-4 h2.title{  padding-left: 0;}
+ul.clearing-thumbs li {
+    margin: 5px 4px;
+    width: 24%;
+	height: 150px;
+}
+.photo-gallery{
+	margin: 0 auto 10px;
+	min-height:350px;
+}
+ul.context-menu-list li.context-menu-item span{
+	color:#000;
+}
+ul.clearing-thumbs li a img {
+    height: 150px;
+    max-height: 150px;
+    width: 100%;
+}
+ul.clearing-thumbs li a img:hover{}
+.search-form{ margin: 20px 9px 0; position:relative;}
+form#search-form span._waiting{
+	display:none;
+	 -moz-box-sizing: content-box;
+    background: url("../images/spinner_16px.gif") no-repeat scroll 0 0 transparent;
+    height: 16px;
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    width: 16px;
+}
+li.default_image {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #D5D5D5;
+    height: 154px;
+    text-align: center;
+}
+.default_image a {
+    background: url("../images/preloader_transparent.gif") no-repeat scroll center center transparent;
+    display: block;
+    height: 148px;
+    width: 227px;
+}
+.default_image a img{
+	margin: 25px 0 0;
+}
+.action_refresh {
+    border: medium none;
+    margin: 0 0 0 10px;
+    text-align: right;
+    width: 32px;
+	opacity:0.8;
+}
+.action_refresh:hover{
+opacity:1;
+}
+ul.clearing-thumbs li span.has-tip {
+    display: block;
+    height: 150px;
+    width: 229px;
+}
+.tooltip{
+background: #bcbcbc; /* Old browsers */
+background: -moz-linear-gradient(top,  #bcbcbc 0%, #606060 83%, #0e0e0e 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bcbcbc), color-stop(83%,#606060), color-stop(100%,#0e0e0e)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #bcbcbc 0%,#606060 83%,#0e0e0e 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #bcbcbc 0%,#606060 83%,#0e0e0e 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #bcbcbc 0%,#606060 83%,#0e0e0e 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #bcbcbc 0%,#606060 83%,#0e0e0e 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bcbcbc', endColorstr='#0e0e0e',GradientType=0 ); /* IE6-9 */
+
+bottom: auto;
+color: #FFFFFF!important;
+}
 a.sort { font-size: 16px; font-weight:bold; text-decoration: none; display: inline-block; padding: 0px 15px 0px 22px; -moz-transition: all 0.2s linear 0s; -webkit-transition: all 0.2s linear 0s; -o-transition: all 0.2s linear 0s;  color: #000; background-color: rgba(255, 255, 255, 0.71); border-radius: 6px; margin: 0 0 0 10px; line-height:41px; height:41px; }
 a.sort .ic{ display:inline-block; margin: 0 0 0 10px }
 
@@ -654,9 +750,12 @@ form.custom-has-label .row .radio{width:8px;height:8px}
 form.custom-has-label p label.iplaceholder {
     cursor: text;
     font-size: 1em;
-    left: 10px;
+    left: 10px!important;
     position: absolute;
     top: 27px!important;
+}
+.event-profile form input[type="text"], .event-profile form input[type="text"]:focus{
+	padding:5px 8px;
 }
 .link_upgrade_account {
     bottom: 0;

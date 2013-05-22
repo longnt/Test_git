@@ -23,7 +23,7 @@ if(isset($_POST) && ($_POST['action'] == 'search')){
 	$_POST = null;
 	die(get_json($results));
 } else if(isset($_POST) && ($_POST['action'] == 'show_images')){
-	show_images();
+	show_images($_POST['curentPage'], $_POST['set_itemsOnPage']);
 } else if(isset($_POST) && ($_POST['action'] == 'delete_image')){
 	$file_input = $_POST['src'];
 	$file_info = pathinfo($file_input);
@@ -141,18 +141,39 @@ function get_files($images_dir,$exts = array('jpg')) {
 function get_file_extension($file_name) {
 	return substr(strrchr($file_name,'.'),1);
 }
-function show_images(){
+function show_images($curentPage = null, $itemsOnPage = null){
 	global $dir_file_upload;
 	$results['status']= 'false';
 	$results['log']= 'No Results';
 	$results['data'] = '';
+	$results['totalImage'] = 0;
 	$images_dir = $dir_file_upload;
+	// on page 8
+	// next 9
+	//page 1 -> from 1
+	//page 2 -> from 8
+	//page 3 -> form 16
 	$image_files = get_files($images_dir);
+	$from_item = $curentPage * $itemsOnPage - $itemsOnPage;
+	$next_item = $from_item + $itemsOnPage;
+	//1 0 8
+	//2 8 16
+	//3 16 24
 	if(count($image_files)) {
+		$results['totalImage'] = count($image_files);
+		$from_item = ( $from_item > $results['totalImage'] ) ? $results['totalImage'] : $from_item;
+		$next_item = ( $next_item > $results['totalImage'] ) ? $results['totalImage'] : $next_item;
+		$i=0;
 		foreach($image_files as $index=>$file) {
-			$str_link = str_replace('processdata.php','',getWeb_Root()).$dir_file_upload.$file;
-			$file_info = pathinfo($str_link);
-			$results['data'][] = $file_info;
+			
+			if($i >= $from_item && $i < $next_item){
+				$str_link = str_replace('processdata.php','',getWeb_Root()).$dir_file_upload.$file;
+				$file_info = pathinfo($str_link);
+				$results['data'][] = $file_info;
+			} else if($i == $next_item){
+				break;
+			}
+			$i++;
 		}
 		$results['log'] = 'Photo Library';
 		$results['status']= 'true';

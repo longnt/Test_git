@@ -523,7 +523,7 @@ ul.clearing-thumbs li span.has-tip {
     height: 150px;
     width: 229px;
 }
-.tooltip{
+.gallery-page .tooltip{
 background: #bcbcbc; /* Old browsers */
 background: -moz-linear-gradient(top,  #bcbcbc 0%, #606060 83%, #0e0e0e 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bcbcbc), color-stop(83%,#606060), color-stop(100%,#0e0e0e)); /* Chrome,Safari4+ */

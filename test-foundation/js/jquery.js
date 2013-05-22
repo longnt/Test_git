@@ -28,7 +28,7 @@ jQuery(document).ready(function(){
 					jQuery('.search-form span._waiting').fadeOut();
 					
 					if(response.status == 'true'){
-						var html ='<li><span data-tooltip class="has-tip" title="'+response.filename+'"><a class="thumbnail" href="'+response.url+'"><img src="'+response.url+'"/></a></span></li>';
+						var html ='<li><span data-tooltip class="has-tip tip-top" title="'+response.name+'"><a data-title="'+response.name+'"  class="thumbnail" href="'+response.url+'"><img src="'+response.url+'"/></a></span></li>';
 						jQuery(str_element).fadeOut().after(html);
 					} else {
 						jQuery(str_element).fadeOut();
@@ -64,7 +64,7 @@ jQuery(document).ready(function(){
 						}
 						jQuery.each( response.data, function ( i, val ) {
 							var src = val.dirname + '/' + val.basename;
-							var html ='<li><span data-tooltip class="has-tip" title="'+val.filename+'"><a class="thumbnail" href="'+src+'"><img src="'+src+'"/></a></span></li>';
+							var html ='<li><span data-tooltip class="has-tip tip-top" title="'+val.filename+'"><a data-title="'+val.filename+'" class="thumbnail" href="'+src+'"><img src="'+src+'"/></a></span></li>';
 							jQuery(str_element).append(html).fadeIn();
 						});
 					} 
@@ -90,7 +90,7 @@ jQuery(document).ready(function(){
 				success: function(response, textStatus, XMLHttpRequest){ 
 					jQuery('.search-form span._waiting').fadeOut();
 					if(response.status == 'true'){
-						jQuery(element_obj).parent().remove();
+						jQuery(element_obj).parent().parent().remove();
 					} 
 				},    
 				error: function(MLHttpRequest, textStatus, errorThrown){  
@@ -114,13 +114,13 @@ jQuery(document).ready(function(){
                 }
             },
             "delete": {name: "Delete", icon: "delete", callback: function(key, options) {
-				if (confirm("Are you sure you want to delete image "+jQuery(this).attr('title')+"?")){                    
+				if (confirm("Are you sure you want to delete image "+jQuery(this).attr('data-title')+"?")){                    
 					delete_image(jQuery(this).attr('href'), jQuery(this));
 				}
 			}},
             "sep1": "---------",
             "quit": {name: "Hide Image", icon: "quit", callback: function(key, options) {
-				jQuery(this).parent().fadeOut();
+				jQuery(this).parent().parent().fadeOut();
 			}}
         }
     });

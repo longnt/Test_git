@@ -476,8 +476,9 @@ ul.clearing-thumbs li {
 ul.context-menu-list li.context-menu-item span{
 	color:#000;
 }
-ul.clearing-thumbs li a img{
-	max-height: 150px;
+ul.clearing-thumbs li a img {
+    height: 150px;
+    max-height: 150px;
     width: 100%;
 }
 ul.clearing-thumbs li a img:hover{}
@@ -516,6 +517,24 @@ li.default_image {
 }
 .action_refresh:hover{
 opacity:1;
+}
+ul.clearing-thumbs li span.has-tip {
+    display: block;
+    height: 150px;
+    width: 229px;
+}
+.tooltip{
+background: #bcbcbc; /* Old browsers */
+background: -moz-linear-gradient(top,  #bcbcbc 0%, #606060 83%, #0e0e0e 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bcbcbc), color-stop(83%,#606060), color-stop(100%,#0e0e0e)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #bcbcbc 0%,#606060 83%,#0e0e0e 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #bcbcbc 0%,#606060 83%,#0e0e0e 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #bcbcbc 0%,#606060 83%,#0e0e0e 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #bcbcbc 0%,#606060 83%,#0e0e0e 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bcbcbc', endColorstr='#0e0e0e',GradientType=0 ); /* IE6-9 */
+
+bottom: auto;
+color: #FFFFFF!important;
 }
 a.sort { font-size: 16px; font-weight:bold; text-decoration: none; display: inline-block; padding: 0px 15px 0px 22px; -moz-transition: all 0.2s linear 0s; -webkit-transition: all 0.2s linear 0s; -o-transition: all 0.2s linear 0s;  color: #000; background-color: rgba(255, 255, 255, 0.71); border-radius: 6px; margin: 0 0 0 10px; line-height:41px; height:41px; }
 a.sort .ic{ display:inline-block; margin: 0 0 0 10px }

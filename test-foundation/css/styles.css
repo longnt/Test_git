@@ -1042,3 +1042,15 @@ top:2px;
 .found-content form.custom .row.collapse  .columns{
 padding-left:2px;
 }
+.longtip{
+width:220px!important;
+display:block;
+top:520px !important;
+}
+.longtip h6{
+color: #000;
+}
+.tooltip.tip-left.longtip > .nub {
+border-color: transparent transparent transparent rgba(255, 255, 255, 0.9);
+
+}

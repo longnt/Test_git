@@ -208,7 +208,9 @@
 										</div>
 										<div class="row collapse">
 											<div class="small-2 columns">
-												<a href="#"><img src="images/ico-ques.png" style="vertical-align:text-top;"></a> &nbsp;
+												<span data-tooltip class="has-tip tip-bottom" title="Tooltips are awesome, you should totally use them!">
+												<img src="images/ico-ques.png" style="vertical-align:text-top;"> &nbsp;
+												</span>
 											</div>
 											
 											<div class="small-3 columns" style="padding-top:3px;">
@@ -335,6 +337,10 @@
 									$(this).parent().children("label.iplaceholder").fadeOut();
 								});
 								$("input.require[value!='']").parent().children("label.iplaceholder").fadeOut();
+								
+								var tooltip_html = '<h6>Why do we want to know this?</h6>' +
+								'<p>Part of the beauty of tracking your activity is you can use Sexulator to compare your activity to averages across your age group and sex.</p>'+
+								'<p>Tell us as much or as little about yourself as you would like!</p>';
 							});
 						</script>
 						<!-- END .event-sidebar --> 
@@ -456,7 +462,8 @@
 				</div>
 			</div><!-- END .main-footer --> 
 		</footer><!-- END .main-footer-wrapper --> 	
-	<script src="js/foundation.min.js"></script>		
+	<script src="js/foundation.min.js"></script>
+	<script src="js/foundation/foundation.tooltips.js"></script>	
 	<script>
 		$(document).foundation();
 	</script>

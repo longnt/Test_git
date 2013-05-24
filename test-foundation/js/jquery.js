@@ -1,13 +1,41 @@
 jQuery(document).ready(function(){
 	var show_itemsOnPage = 8;
-	show_image('',1, show_itemsOnPage);
+	//show_image('',1, show_itemsOnPage);
 	jQuery('a.action_refresh').click(function(){ show_image('refresh',1, show_itemsOnPage); });
 	jQuery('a#action_seach').click(function(){ ajax_search(); });
 	jQuery('form#search-form').submit(function(){
 		ajax_search();
 		return false;
 	})
-	function ajax_search(){
+	$.contextMenu({
+        selector: '.thumbnail', 
+        callback: function(key, options) {
+            var m = "global: " + key;
+            /*window.console && console.log(m) || alert(m); */
+        },
+        items: {
+            "view": {
+                name: "View", 
+                icon: "edit", 
+                // superseeds "global" callback
+                callback: function(key, options) {
+					jQuery(this).click();
+                }
+            },
+            "delete": {name: "Delete", icon: "delete", callback: function(key, options) {
+				if (confirm("Are you sure you want to delete image "+jQuery(this).attr('data-title')+"?")){                    
+					delete_image(jQuery(this).attr('href'), jQuery(this));
+				}
+			}},
+            "sep1": "---------",
+            "quit": {name: "Hide Image", icon: "quit", callback: function(key, options) {
+				jQuery(this).parent().parent().fadeOut();
+			}}
+        }
+    });
+})
+/* FUNCTION */
+function ajax_search(){
 		var value = jQuery.trim(jQuery('form.search-form input[name=url]').val());
 		var str_element = 'div.photo-gallery div div ul li.default_image';
 		if(value != ''){
@@ -113,30 +141,3 @@ jQuery(document).ready(function(){
 				}  
 			});  
 	}
-	$.contextMenu({
-        selector: '.thumbnail', 
-        callback: function(key, options) {
-            var m = "global: " + key;
-            /*window.console && console.log(m) || alert(m); */
-        },
-        items: {
-            "view": {
-                name: "View", 
-                icon: "edit", 
-                // superseeds "global" callback
-                callback: function(key, options) {
-					jQuery(this).click();
-                }
-            },
-            "delete": {name: "Delete", icon: "delete", callback: function(key, options) {
-				if (confirm("Are you sure you want to delete image "+jQuery(this).attr('data-title')+"?")){                    
-					delete_image(jQuery(this).attr('href'), jQuery(this));
-				}
-			}},
-            "sep1": "---------",
-            "quit": {name: "Hide Image", icon: "quit", callback: function(key, options) {
-				jQuery(this).parent().parent().fadeOut();
-			}}
-        }
-    });
-})

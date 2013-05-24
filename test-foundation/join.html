@@ -29,9 +29,10 @@
 				<!-- Right Nav Section -->
 					<ul class="right">
 						<li> <a href="events-calendar.html"><span>My Events</span></a> </li>
-						<li> <a href="join.html"><span>Join</span></a> </li>
+						<li class="selected"> <a href="join.html"><span>Join</span></a> </li>
+						<li> <a href="stats.html"><span>Stats</span></a> </li>
 						<li> <a href="link.html"><span>Links</span></a> </li>
-						<li class="selected"> <a href="aboutus.html"><span>About Us</span></a> </li>
+						<li> <a href="aboutus.html"><span>About Us</span></a> </li>
 						<li> <a href="login.html"><span>Login</span></a> </li>
 					</ul>
 				</section>
@@ -143,7 +144,7 @@
 				</div>
               <div class="row collapse">
 				<div class="small-2 columns">
-					<a href="#"><img src="images/ico-ques.png" style="vertical-align:text-top;"></a> &nbsp;
+					<a href="#" data-tooltip  class="has-tip-long tip-left"><img src="images/ico-ques.png" style="vertical-align:text-top;"></a> &nbsp;
 				</div>
 				
 				<div class="small-3 columns" style="padding-top:3px;">
@@ -256,7 +257,19 @@
 			});
 			$("input.require[value!='']").closest("p").children("label.iplaceholder").fadeOut();
 		});
+		Foundation.libs.tooltips.settings = {
+		  selector : '.has-tip-long',
+		  additionalInheritableClasses : [],
+		  tooltipClass : '.tooltip',
+		  appendTo: 'body',
+		  tipTemplate : function (selector, content) {
+			return '<span data-selector="' + selector + '" class="' 
+			  + Foundation.libs.tooltips.settings.tooltipClass.substring(1) 
+			  + ' longtip">' + $('.tip-wrapper .tip').html() + '<span class="nub"></span></span>';
+		  }
+		};
 		$(document).foundation();
+		
 	  </script>
 	</div><!-- END .main-body-wrapper -->
 </body>

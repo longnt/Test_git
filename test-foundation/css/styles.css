@@ -1051,9 +1051,39 @@ margin-top:0px;
 font-weight:100;
 }
 form.custom .columns span.title-select{
-	line-height:27px;
+	line-height:19px;
 	font-weight:800;
 }
-.join-box form.custom p label.iplaceholder {
+
+.found-content form.custom .custom.dropdown {
+height:1.8em;
+}
+.found-content form.custom .custom.dropdown .current {
+line-height:1.8em;
+}
+.found-content form.custom .custom.dropdown .selector {
+height:1.75em;
+width: 2.125em;
+right: -5px;
+}
+.found-content  form.custom input.require{
+height:1.8em;
+}
+.found-content form.custom p label.iplaceholder {
 top:2px;
+}
+.found-content form.custom .row.collapse  .columns{
+padding-left:2px;
+}
+.longtip{
+width:220px!important;
+display:block;
+top:520px !important;
+}
+.longtip h6{
+color: #000;
+}
+.tooltip.tip-left.longtip > .nub {
+border-color: transparent transparent transparent rgba(255, 255, 255, 0.9);
+
 }
